@@ -1,0 +1,10 @@
+{
+  "data": [
+    { "id": "1", "label": "C++" },
+    { "id": "2", "label": "JavaScript" },
+    { "id": "3", "label": "Java" },
+    { "id": "4", "label": "Kotlin" },
+    { "id": "5", "label": "아희" },
+    { "id": "6", "label": "Haskell" }
+  ]
+}

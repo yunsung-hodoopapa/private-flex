@@ -1,0 +1,20 @@
+{
+  "name": "flex-fe-tech-interview-server",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/src/index.js",
+    "dev": "tsc-watch --onSuccess \"node dist/src/index.js\""
+  },
+  "dependencies": {
+    "fastify": "^3.21.6",
+    "fastify-cors": "^6.0.2"
+  },
+  "devDependencies": {
+    "@tsconfig/node14": "^1.0.1",
+    "@types/node": "^16.10.1",
+    "tsc-watch": "^4.5.0",
+    "typescript": "^4.4.3"
+  }
+}
