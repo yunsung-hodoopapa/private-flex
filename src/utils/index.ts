@@ -8,3 +8,20 @@ export const validators = {
 export const validatePatterns = {
   EMAIL_REGEX,
 };
+
+// onChage 이벤트에 적용할 디바운스 함수
+export const debounce = <F extends (...args: any[]) => any>(
+  func: any,
+  waitFor: number
+) => {
+  let timeout: any;
+
+  return (...args: Parameters<F>): Promise<ReturnType<F>> =>
+    new Promise(resolve => {
+      if (timeout) {
+        clearTimeout(timeout);
+      }
+
+      timeout = setTimeout(() => resolve(func(...args)), waitFor);
+    });
+};
