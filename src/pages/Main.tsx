@@ -57,11 +57,6 @@ export default function MainPage() {
     setIsPasswordConfirmed(bool);
   }, [password, confirmPassword]);
 
-  console.log(password);
-  console.log(confirmPassword);
-
-  console.log(isPasswordConfirmed);
-
   return (
     <PageLayout>
       <Header />
