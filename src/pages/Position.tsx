@@ -1,5 +1,5 @@
 import { useHistory } from 'react-router-dom';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from '../components/Button';
 import Header from '../components/Header';
 import PageLayout from '../components/PageLayout';
@@ -10,11 +10,23 @@ import Fieldset from '../components/Fieldset';
 
 export default function PositionPage() {
   const { push } = useHistory();
-  const [selectedItem, setSelectedItem] = useState(positionWrap[0].name);
+  const [selectedItem, setSelectedItem] = useState('');
 
   const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedItem(event.target.value);
   };
+
+  const onClickRouteHandler = () => {
+    if (selectedItem === '') {
+      window.alert('하나 이상의 값을 선택해주세요');
+    } else {
+      push('/summary');
+    }
+  };
+
+  useEffect(() => {
+    console.log(selectedItem);
+  }, [selectedItem]);
 
   return (
     <PageLayout>
@@ -31,14 +43,13 @@ export default function PositionPage() {
                 value={name}
                 name="applied-position"
                 label={name}
-                defaultChecked={index === 0}
                 onChange={onChangeHandler}
               />
             );
           })}
         </Fieldset>
       </Section>
-      <Button onClick={() => push('/summary')}>다음</Button>
+      <Button onClick={() => onClickRouteHandler()}>다음</Button>
     </PageLayout>
   );
 }
