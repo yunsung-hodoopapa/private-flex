@@ -6,6 +6,7 @@ interface Props extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
   label: React.ReactNode;
   type?: 'checkbox' | 'radio';
+  disabled?: boolean;
 }
 
 const Checkbox = forwardRef<HTMLInputElement, Props>((props: Props, ref) => {
