@@ -9,8 +9,6 @@ import Checkbox from '../components/Checkbox';
 import Section from '../components/Section';
 import Fieldset from '../components/Fieldset';
 
-import { ChangeEvent } from 'react';
-
 type CheckItemType = {
   id: string;
   name: any;
